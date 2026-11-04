@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toprak Studio – Oyunlar ve Uygulamalar</title>
+<meta name="description" content="Toprak Studio: Furboom ve İngilizce Kelime Dedektifi gibi aileye uygun mobil oyunlar ve uygulamalar geliştiren bağımsız stüdyo.">
+<meta property="og:title" content="Toprak Studio">
+<meta property="og:description" content="Aileye uygun mobil oyunlar ve uygulamalar.">
+<meta property="og:image" content="https://kanberbuldu.github.io/img/hero.webp">
+<meta property="og:url" content="https://kanberbuldu.github.io/">
+<meta name="theme-color" content="#3aa8ff">
+<link rel="icon" type="image/png" href="img/logo-192.png">
+<link rel="apple-touch-icon" href="img/logo-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sky-top: #3aa8ff;
+  --sky-bottom: #a6e0ff;
+  --ink: #18264a;
+  --muted: #4d5d80;
+  --card: #ffffff;
+  --blue: #2456b8;
+  --coral: #ff6a73;
+  --display: "Baloo 2", "Nunito", system-ui, sans-serif;
+  --body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  font-family: var(--body); color: var(--ink); line-height: 1.55;
+  background: linear-gradient(180deg, var(--sky-top) 0%, var(--sky-bottom) 520px, #eef7ff 900px, #f6fbff 100%);
+  min-height: 100vh;
+}
+a { color: var(--blue); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; border-radius: 8px; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+
+header.hero { text-align: center; padding: 28px 0 8px; }
+.hero img.banner { width: 100%; max-width: 1040px; height: auto; display: block; margin: 0 auto; border-radius: 22px; box-shadow: 0 24px 50px -28px rgba(10,50,110,.55); }
+.hero h1 { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.tagline { font: 800 clamp(20px, 3.2vw, 28px)/1.25 var(--display); color: var(--ink); margin: 22px auto 0; max-width: 30ch; text-wrap: balance; }
+.lang { display: flex; justify-content: flex-end; gap: 6px; padding-top: 14px; }
+.lang button { font: 800 13px var(--body); color: #fff; background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.5); border-radius: 999px; padding: 4px 12px; cursor: pointer; }
+.lang button[aria-pressed="true"] { background: #fff; color: var(--blue); }
+
+main { display: flex; flex-direction: column; gap: 34px; padding: 34px 0 50px; }
+h2 { font: 800 26px/1.2 var(--display); margin: 0 0 14px; color: var(--ink); }
+.apps { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+.app { background: var(--card); border-radius: 20px; padding: 18px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 14px 30px -22px rgba(10,50,110,.5); }
+.app .top { display: flex; gap: 14px; align-items: center; }
+.app img { width: 72px; height: 72px; border-radius: 18px; flex: none; }
+.app h3 { font: 800 21px/1.15 var(--display); margin: 0; }
+.app p { margin: 0; color: var(--muted); font-size: 15px; }
+.links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
+.btn { display: inline-flex; align-items: center; gap: 6px; font: 800 14px var(--body); text-decoration: none; border-radius: 999px; padding: 8px 14px; }
+.btn.play { background: var(--ink); color: #fff; }
+.btn.ghost { background: #eaf3ff; color: var(--blue); }
+.soon { display: grid; place-items: center; width: 72px; height: 72px; border-radius: 18px; background: linear-gradient(135deg, #9a6bff, #3fa9ff); color: #fff; font: 800 30px var(--display); flex: none; }
+.tag { font: 800 12px var(--body); background: #fff3c4; color: #8a5a00; border-radius: 999px; padding: 2px 10px; align-self: flex-start; }
+
+.about { display: grid; grid-template-columns: 200px 1fr; gap: 24px; align-items: center; background: var(--card); border-radius: 24px; padding: 22px; box-shadow: 0 14px 30px -22px rgba(10,50,110,.5); }
+.about img { width: 100%; max-width: 200px; height: auto; }
+.about p { margin: 0 0 10px; max-width: 62ch; }
+@media (max-width: 640px) { .about { grid-template-columns: 1fr; justify-items: center; text-align: center; } }
+
+.contact { background: var(--card); border-radius: 24px; padding: 22px; box-shadow: 0 14px 30px -22px rgba(10,50,110,.5); }
+.contact p { margin: 0 0 6px; }
+footer { text-align: center; color: var(--muted); font-size: 14px; padding: 0 0 30px; }
+footer nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 16px; margin-bottom: 8px; }
+[data-en] { display: none; }
+html[lang="en"] [data-en] { display: revert; }
+html[lang="en"] [data-tr] { display: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="lang" role="group" aria-label="Dil / Language">
+    <button type="button" id="trBtn" aria-pressed="true">TR</button>
+    <button type="button" id="enBtn" aria-pressed="false">EN</button>
+  </div>
+  <header class="hero">
+    <h1>Toprak Studio</h1>
+    <img class="banner" src="img/hero.webp" width="1600" height="900" alt="Toprak Studio logosu: renkli oyuncak küplerle yazılmış TOPRAK ve altında STUDIO">
+    <p class="tagline"><span data-tr>Aileye uygun, eğlenceli mobil oyunlar ve uygulamalar</span><span data-en>Fun, family-friendly mobile games and apps</span></p>
+  </header>
+
+  <main>
+    <section aria-labelledby="appsH">
+      <h2 id="appsH"><span data-tr>Oyunlarımız</span><span data-en>Our games</span></h2>
+      <div class="apps">
+        <article class="app">
+          <div class="top">
+            <img src="img/furboom.webp" width="72" height="72" alt="Furboom simgesi">
+            <div><h3>Furboom!</h3><p><span data-tr>Tüylü dostlarını birleştir, kavanozu doldur.</span><span data-en>Merge the furry friends and fill the jar.</span></p></div>
+          </div>
+          <div class="links">
+            <a class="btn play" href="https://play.google.com/store/apps/details?id=com.toprakstudio.furboom">▶ Google Play</a>
+            <a class="btn ghost" href="furboom-privacy/"><span data-tr>Gizlilik</span><span data-en>Privacy</span></a>
+          </div>
+        </article>
+        <article class="app">
+          <div class="top">
+            <img src="img/kelimedetektifi.webp" width="72" height="72" alt="İngilizce Kelime Dedektifi simgesi">
+            <div><h3>İngilizce Kelime Dedektifi</h3><p><span data-tr>Kutuyu aç, kelimeyi bul; İngilizceyi oynayarak öğren.</span><span data-en>Open the box, find the word: learn English by playing.</span></p></div>
+          </div>
+          <div class="links">
+            <a class="btn play" href="https://play.google.com/store/apps/details?id=com.toprakstudio.kelimedetektifi">▶ Google Play</a>
+            <a class="btn ghost" href="kelime-dedektifi-privacy/"><span data-tr>Gizlilik</span><span data-en>Privacy</span></a>
+          </div>
+        </article>
+        <article class="app">
+          <div class="top">
+            <div class="soon" aria-hidden="true">?</div>
+            <div><h3><span data-tr>Yeni bulmaca oyunu</span><span data-en>New puzzle game</span></h3><p><span data-tr>Mantık bulmacalarını seven herkes için.</span><span data-en>For everyone who loves logic puzzles.</span></p></div>
+          </div>
+          <span class="tag"><span data-tr>Yakında</span><span data-en>Coming soon</span></span>
+        </article>
+      </div>
+    </section>
+
+    <section class="about" aria-labelledby="aboutH">
+      <img src="img/logo.webp" width="480" height="480" alt="Toprak Studio dairesel logosu: ortada gözlü T rozeti">
+      <div>
+        <h2 id="aboutH"><span data-tr>Hakkımızda</span><span data-en>About us</span></h2>
+        <p data-tr>Toprak Studio, Türkiye'de çalışan bağımsız bir mobil oyun ve uygulama stüdyosudur. Herkesin, özellikle de çocukların ve ailelerin gönül rahatlığıyla oynayabileceği, sade ve neşeli oyunlar yapıyoruz.</p>
+        <p data-en>Toprak Studio is an independent mobile game and app studio based in Türkiye. We make simple, cheerful games that everyone, especially kids and families, can enjoy with peace of mind.</p>
+        <a class="btn play" href="https://play.google.com/store/apps/dev?id=7135926341701023095"><span data-tr>Tüm uygulamalarımız</span><span data-en>All our apps</span></a>
+      </div>
+    </section>
+
+    <section class="contact" aria-labelledby="contactH">
+      <h2 id="contactH"><span data-tr>İletişim</span><span data-en>Contact</span></h2>
+      <p><span data-tr>Soru, öneri ve destek için:</span><span data-en>Questions, feedback and support:</span> <a href="mailto:toprakstudioapp@gmail.com">toprakstudioapp@gmail.com</a></p>
+      <p data-tr>Hesap ve veri silme talepleri için ilgili oyunun gizlilik sayfasına bakın.</p>
+      <p data-en>For account and data deletion requests, see the privacy page of the related game.</p>
+    </section>
+  </main>
+
+  <footer>
+    <nav aria-label="Yasal">
+      <a href="furboom-privacy/"><span data-tr>Furboom gizlilik politikası</span><span data-en>Furboom privacy policy</span></a>
+      <a href="kelime-dedektifi-privacy/"><span data-tr>Kelime Dedektifi gizlilik politikası</span><span data-en>Kelime Dedektifi privacy policy</span></a>
+    </nav>
+    © 2026 Toprak Studio
+  </footer>
+</div>
+<script>
+(function () {
+  var root = document.documentElement, tr = document.getElementById("trBtn"), en = document.getElementById("enBtn");
+  function set(l) {
+    root.lang = l; tr.setAttribute("aria-pressed", l === "tr"); en.setAttribute("aria-pressed", l === "en");
+    try { localStorage.setItem("lang", l); } catch (e) {}
+  }
+  var saved = null; try { saved = localStorage.getItem("lang"); } catch (e) {}
+  set(saved || ((navigator.language || "tr").toLowerCase().indexOf("tr") === 0 ? "tr" : "en"));
+  tr.addEventListener("click", function () { set("tr"); });
+  en.addEventListener("click", function () { set("en"); });
+})();
+</script>
+</body>
+</html>
